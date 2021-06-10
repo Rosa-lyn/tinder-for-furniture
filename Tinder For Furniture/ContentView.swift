@@ -20,9 +20,13 @@ struct ContentView: View {
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(maxWidth: .infinity)
+                                .frame(maxHeight: .infinity)
                         },
                         placeholder: {
                             ProgressView()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: .infinity)
+                            .frame(maxHeight: .infinity)
                         }
                     )
                     
@@ -30,15 +34,28 @@ struct ContentView: View {
                         .font(.largeTitle)
                         .foregroundColor(.white)
                 }
+                .listRowSeparator(.hidden)
                  .swipeActions {
                         Button(action: {
 //                            furniture.isLiked.toggle()
+                        }) {
+                            Image(systemName: "hands.sparkles")
+                                .symbolRenderingMode(.hierarchical)
+
+                        }
+                    }
+                 .tint(.green)
+                 .swipeActions(edge: .leading) {
+                        Button(action: {
+//                            furniture.isLiked.toggle()
                         }, label: {
-                            Text("like")
+                            Text("dislike")
                         })
                     }
+                 .tint(.red)
             }
         }
+        .listStyle(.plain)
     }
 }
 
