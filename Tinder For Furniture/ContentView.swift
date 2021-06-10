@@ -8,9 +8,21 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var furnitureItems = Furniture.previewData
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List {
+            ForEach(furnitureItems) { furniture in
+                Text(furniture.name)
+                    .swipeActions {
+                        Button(action: {
+//                            furniture.isLiked.toggle()
+                        }, label: {
+                            Text("like")
+                        })
+                    }
+            }
+        }
     }
 }
 

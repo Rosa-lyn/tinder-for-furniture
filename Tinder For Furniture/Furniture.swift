@@ -11,10 +11,11 @@ struct Furniture: Identifiable {
     var id: Int
     var name: String
     var url: String
+    var isLiked: Bool = false
 }
 
 extension Furniture {
-    static let previewData: [Furniture] = [
+    static var previewData: [Furniture] = [
         Furniture(id: 0,
                   name: "forest chair",
                   url: "https://images.unsplash.com/photo-1560765825-9c88b77934a5?ixid=MnwxMjA3fDB8MHxwaG90by1[…]GVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
