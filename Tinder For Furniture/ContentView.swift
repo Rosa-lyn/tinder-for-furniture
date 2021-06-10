@@ -13,8 +13,24 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(furnitureItems) { furniture in
-                Text(furniture.name)
-                    .swipeActions {
+                ZStack {
+                    AsyncImage(
+                        url: furniture.url,
+                        content: { image in
+                            image.resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(maxWidth: .infinity)
+                        },
+                        placeholder: {
+                            ProgressView()
+                        }
+                    )
+                    
+                    Text(furniture.name)
+                        .font(.largeTitle)
+                        .foregroundColor(.white)
+                }
+                 .swipeActions {
                         Button(action: {
 //                            furniture.isLiked.toggle()
                         }, label: {
