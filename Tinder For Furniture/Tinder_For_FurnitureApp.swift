@@ -11,7 +11,7 @@ import SwiftUI
 struct Tinder_For_FurnitureApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
