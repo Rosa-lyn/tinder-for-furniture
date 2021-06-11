@@ -17,7 +17,7 @@ struct MyFurnitureView: View {
                 ForEach(favouritesStore.favourites) { furniture in
                         ZStack {
                             AsyncImage(
-                                url: furniture.url,
+                                url: URL(string: furniture.url),
                                 content: { image in
                                 image.resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -34,14 +34,6 @@ struct MyFurnitureView: View {
                                 .foregroundColor(.white)
                         }
                         .listRowSeparator(.hidden)
-                        .swipeActions(edge: .leading) {
-                            Button(action: {
-//                                furniture.isLiked.toggle()
-                            }) {
-                                Image(systemName: "trash")
-                            }
-                        }
-                        .tint(.red)
                 }
             }
         }

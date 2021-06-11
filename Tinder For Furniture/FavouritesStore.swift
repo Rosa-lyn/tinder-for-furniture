@@ -6,13 +6,30 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class FavouritesStore: ObservableObject {
     @Published var favourites: [Furniture] = []
+    
+    var db = Firestore.firestore()
     
     func toggleFaves(furniture: Furniture) {
 //        furniture.isLiked.toggle()
     }
     
+    func addToFavourites(furniture: Furniture) {
+        let docRef = db.collection("MyFurniture").document("MyFurniture")
+        docRef.updateData([
+            "LikedFurniture" : FieldValue.arrayUnion([["name": furniture.name, "url": furniture.url]])
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Furniture added to likes")
+            }
+        }
+
+    }
     
 }

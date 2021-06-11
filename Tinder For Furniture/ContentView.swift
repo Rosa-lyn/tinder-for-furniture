@@ -8,16 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var furnitureItems = Furniture.previewData
+    @ObservedObject var favouritesStore: FavouritesStore
     
     var body: some View {
         VStack {
             Text("All Furniture").font(.title)
             List {
-                ForEach(furnitureItems) { furniture in
+                ForEach(Furniture.previewData) { furniture in
                     ZStack {
                         AsyncImage(
-                            url: furniture.url,
+                            url: URL(string: furniture.url),
                             content: { image in
                             image.resizable()
                                 .aspectRatio(contentMode: .fit)
@@ -36,7 +36,7 @@ struct ContentView: View {
                     .listRowSeparator(.hidden)
                     .swipeActions {
                         Button(action: {
-                            //                            furniture.isLiked.toggle()
+                            favouritesStore.addToFavourites(furniture: furniture)
                         }) {
                             Image(systemName: "hands.sparkles")
                         }
@@ -54,11 +54,16 @@ struct ContentView: View {
             }
             .listStyle(.plain)
         }
+//        .onAppear {
+//            if let localData = furnitureStore.readJSONFile(name: "data") {
+//                furnitureStore.parse(jsonData: localData)
+//            }
+//        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(favouritesStore: FavouritesStore())
     }
 }

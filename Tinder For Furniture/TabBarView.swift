@@ -12,7 +12,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView {
-            ContentView()
+            ContentView(favouritesStore: favouritesStore)
                 .tabItem {
                     Image(systemName: "house")
                 }
