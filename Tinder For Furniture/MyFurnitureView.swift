@@ -33,6 +33,14 @@ struct MyFurnitureView: View {
                                 .font(.largeTitle)
                                 .foregroundColor(.white)
                         }
+                        .swipeActions(edge: .leading) {
+                            Button(action: {
+                                favouritesStore.removeFromFavourites(furniture: furniture)
+                            }) {
+                                Image(systemName: "trash")
+                            }
+                        }
+                        .tint(.red)
                         .listRowSeparator(.hidden)
                 }
             }

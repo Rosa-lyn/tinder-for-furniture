@@ -14,22 +14,35 @@ class FavouritesStore: ObservableObject {
     
     var db = Firestore.firestore()
     
-    func toggleFaves(furniture: Furniture) {
-//        furniture.isLiked.toggle()
-    }
-    
     func addToFavourites(furniture: Furniture) {
         let docRef = db.collection("MyFurniture").document("MyFurniture")
+        
         docRef.updateData([
             "LikedFurniture" : FieldValue.arrayUnion([["name": furniture.name, "url": furniture.url]])
         ]) { err in
             if let err = err {
                 print("Error updating document: \(err)")
             } else {
+                self.favourites.append(furniture)
                 print("Furniture added to likes")
             }
         }
 
+    }
+    
+    func removeFromFavourites(furniture: Furniture) {
+        let docRef = db.collection("MyFurniture").document("MyFurniture")
+
+        docRef.updateData([
+            "LikedFurniture" : FieldValue.arrayRemove([["name": furniture.name, "url": furniture.url]])
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                self.favourites.removeAll(where: { $0.name == furniture.name })
+                print("Furniture removed from likes")
+            }
+        }
     }
     
 }

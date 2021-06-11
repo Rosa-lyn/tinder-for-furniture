@@ -37,28 +37,16 @@ struct ContentView: View {
                     .swipeActions {
                         Button(action: {
                             favouritesStore.addToFavourites(furniture: furniture)
+                            
                         }) {
                             Image(systemName: "hands.sparkles")
                         }
                     }
                     .tint(.green)
-                    .swipeActions(edge: .leading) {
-                        Button(action: {
-                            //                            furniture.isLiked.toggle()
-                        }) {
-                            Image(systemName: "trash")
-                        }
-                    }
-                    .tint(.red)
                 }
             }
             .listStyle(.plain)
         }
-//        .onAppear {
-//            if let localData = furnitureStore.readJSONFile(name: "data") {
-//                furnitureStore.parse(jsonData: localData)
-//            }
-//        }
     }
 }
 
