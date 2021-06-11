@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		0C38CB1F26735CEA0024F042 /* MyFurnitureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */; };
 		0C38CB21267360200024F042 /* FavouritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C38CB20267360200024F042 /* FavouritesStore.swift */; };
+		0C7E92892673727A0056747D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C7E92882673727A0056747D /* GoogleService-Info.plist */; };
+		0C7E928C267372B80056747D /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7E928B267372B80056747D /* FirebaseDatabase */; };
+		0C7E928E267372B80056747D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7E928D267372B80056747D /* FirebaseFirestore */; };
+		0C7E9290267372B80056747D /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 0C7E928F267372B80056747D /* FirebaseFirestoreSwift-Beta */; };
 		5B0E07712673691600FD48DF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B0E07702673691600FD48DF /* data.json */; };
 		5B5FBB502672519F00AF86FD /* Tinder_For_FurnitureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FBB4F2672519F00AF86FD /* Tinder_For_FurnitureApp.swift */; };
 		5B5FBB522672519F00AF86FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FBB512672519F00AF86FD /* ContentView.swift */; };
@@ -20,6 +24,7 @@
 /* Begin PBXFileReference section */
 		0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFurnitureView.swift; sourceTree = "<group>"; };
 		0C38CB20267360200024F042 /* FavouritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesStore.swift; sourceTree = "<group>"; };
+		0C7E92882673727A0056747D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B0E07702673691600FD48DF /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5B5FBB4C2672519F00AF86FD /* Tinder For Furniture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder For Furniture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5FBB4F2672519F00AF86FD /* Tinder_For_FurnitureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinder_For_FurnitureApp.swift; sourceTree = "<group>"; };
@@ -34,6 +39,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7E9290267372B80056747D /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				0C7E928C267372B80056747D /* FirebaseDatabase in Frameworks */,
+				0C7E928E267372B80056747D /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +73,7 @@
 				5B5FBB5D2672553900AF86FD /* Furniture.swift */,
 				5B0E07702673691600FD48DF /* data.json */,
 				0C38CB20267360200024F042 /* FavouritesStore.swift */,
+				0C7E92882673727A0056747D /* GoogleService-Info.plist */,
 				5B5FBB53267251A000AF86FD /* Assets.xcassets */,
 				5B5FBB55267251A000AF86FD /* Preview Content */,
 			);
@@ -95,6 +104,11 @@
 			dependencies = (
 			);
 			name = "Tinder For Furniture";
+			packageProductDependencies = (
+				0C7E928B267372B80056747D /* FirebaseDatabase */,
+				0C7E928D267372B80056747D /* FirebaseFirestore */,
+				0C7E928F267372B80056747D /* FirebaseFirestoreSwift-Beta */,
+			);
 			productName = "Tinder For Furniture";
 			productReference = 5B5FBB4C2672519F00AF86FD /* Tinder For Furniture.app */;
 			productType = "com.apple.product-type.application";
@@ -123,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 5B5FBB432672519F00AF86FD;
+			packageReferences = (
+				0C7E928A267372B80056747D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 5B5FBB4D2672519F00AF86FD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +157,7 @@
 				5B5FBB57267251A000AF86FD /* Preview Assets.xcassets in Resources */,
 				5B0E07712673691600FD48DF /* data.json in Resources */,
 				5B5FBB54267251A000AF86FD /* Assets.xcassets in Resources */,
+				0C7E92892673727A0056747D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +377,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0C7E928A267372B80056747D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0C7E928B267372B80056747D /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C7E928A267372B80056747D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		0C7E928D267372B80056747D /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C7E928A267372B80056747D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		0C7E928F267372B80056747D /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0C7E928A267372B80056747D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B5FBB442672519F00AF86FD /* Project object */;
 }

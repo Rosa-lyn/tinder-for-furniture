@@ -11,7 +11,7 @@ class FavouritesStore: ObservableObject {
     @Published var favourites: [Furniture] = []
     
     func toggleFaves(furniture: Furniture) {
-        furniture.isLiked.toggle()
+//        furniture.isLiked.toggle()
     }
     
     
