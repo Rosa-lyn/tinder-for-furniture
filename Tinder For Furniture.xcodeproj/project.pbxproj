@@ -19,6 +19,7 @@
 		5B5FBB54267251A000AF86FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FBB53267251A000AF86FD /* Assets.xcassets */; };
 		5B5FBB57267251A000AF86FD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FBB56267251A000AF86FD /* Preview Assets.xcassets */; };
 		5B5FBB5E2672553900AF86FD /* Furniture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FBB5D2672553900AF86FD /* Furniture.swift */; };
+		5B772A212673637B004A7509 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B772A202673637B004A7509 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		5B5FBB53267251A000AF86FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B5FBB56267251A000AF86FD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5B5FBB5D2672553900AF86FD /* Furniture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furniture.swift; sourceTree = "<group>"; };
+		5B772A202673637B004A7509 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				5B5FBB4F2672519F00AF86FD /* Tinder_For_FurnitureApp.swift */,
 				5B5FBB512672519F00AF86FD /* ContentView.swift */,
 				0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */,
+				5B772A202673637B004A7509 /* TabBarView.swift */,
 				5B5FBB5D2672553900AF86FD /* Furniture.swift */,
 				5B0E07702673691600FD48DF /* data.json */,
 				0C38CB20267360200024F042 /* FavouritesStore.swift */,
@@ -172,6 +175,7 @@
 				0C38CB1F26735CEA0024F042 /* MyFurnitureView.swift in Sources */,
 				0C38CB21267360200024F042 /* FavouritesStore.swift in Sources */,
 				5B5FBB5E2672553900AF86FD /* Furniture.swift in Sources */,
+				5B772A212673637B004A7509 /* TabBarView.swift in Sources */,
 				5B5FBB502672519F00AF86FD /* Tinder_For_FurnitureApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
