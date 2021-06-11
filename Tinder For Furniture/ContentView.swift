@@ -24,9 +24,6 @@ struct ContentView: View {
                         },
                         placeholder: {
                             ProgressView()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(maxWidth: .infinity)
-                            .frame(maxHeight: .infinity)
                         }
                     )
                     
