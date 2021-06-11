@@ -11,6 +11,7 @@ struct ContentView: View {
     @ObservedObject var favouritesStore: FavouritesStore
     
     @State private var showingAlert = false
+    @State private var beg = false
     
     func addToFavourites(furniture: Furniture) async throws {
         try await favouritesStore.addToFavourites(furniture: furniture)
@@ -56,8 +57,14 @@ struct ContentView: View {
             }
             .listStyle(.plain)
         }
+        .refreshable {
+            beg = true
+        }
         .alert("Added to favourites!", isPresented: $showingAlert) {
             Button("OK", role: .cancel) { }
+        }
+        .alert("Vote for PHFC!", isPresented: $beg) {
+            Button("Please, we're begging", role: .cancel) { }
         }
     }
 }

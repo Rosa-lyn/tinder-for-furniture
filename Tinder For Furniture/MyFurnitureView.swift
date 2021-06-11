@@ -10,6 +10,9 @@ import SwiftUI
 struct MyFurnitureView: View {
     @ObservedObject var favouritesStore: FavouritesStore
     
+    @State private var showingAlert = false
+    @State var backgroundColour = Color.white
+    
     var body: some View {
         VStack {
             Text("My Furniture").font(.title)
@@ -28,7 +31,6 @@ struct MyFurnitureView: View {
                                 ProgressView()
                             }
                             )
-                            
                             Text(furniture.name)
                                 .font(.largeTitle)
                                 .foregroundColor(.white)
@@ -42,9 +44,24 @@ struct MyFurnitureView: View {
                         }
                         .tint(.red)
                         .listRowSeparator(.hidden)
+                        .listRowBackground(backgroundColour)
                 }
             }
         }
+        .refreshable {
+            backgroundColour = Color.random
+        }
+        .background(backgroundColour)
+    }
+}
+
+extension Color {
+    static var random: Color {
+        return Color(
+            red: .random(in: 0...1),
+            green: .random(in: 0...1),
+            blue: .random(in: 0...1)
+        )
     }
 }
 
