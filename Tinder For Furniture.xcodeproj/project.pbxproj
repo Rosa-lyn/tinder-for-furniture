@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0C38CB1F26735CEA0024F042 /* MyFurnitureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */; };
 		0C38CB21267360200024F042 /* FavouritesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C38CB20267360200024F042 /* FavouritesStore.swift */; };
+		5B0E07712673691600FD48DF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 5B0E07702673691600FD48DF /* data.json */; };
 		5B5FBB502672519F00AF86FD /* Tinder_For_FurnitureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FBB4F2672519F00AF86FD /* Tinder_For_FurnitureApp.swift */; };
 		5B5FBB522672519F00AF86FD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B5FBB512672519F00AF86FD /* ContentView.swift */; };
 		5B5FBB54267251A000AF86FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B5FBB53267251A000AF86FD /* Assets.xcassets */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFurnitureView.swift; sourceTree = "<group>"; };
 		0C38CB20267360200024F042 /* FavouritesStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesStore.swift; sourceTree = "<group>"; };
+		5B0E07702673691600FD48DF /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		5B5FBB4C2672519F00AF86FD /* Tinder For Furniture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder For Furniture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5FBB4F2672519F00AF86FD /* Tinder_For_FurnitureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tinder_For_FurnitureApp.swift; sourceTree = "<group>"; };
 		5B5FBB512672519F00AF86FD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				5B5FBB512672519F00AF86FD /* ContentView.swift */,
 				0C38CB1E26735CEA0024F042 /* MyFurnitureView.swift */,
 				5B5FBB5D2672553900AF86FD /* Furniture.swift */,
+				5B0E07702673691600FD48DF /* data.json */,
 				0C38CB20267360200024F042 /* FavouritesStore.swift */,
 				5B5FBB53267251A000AF86FD /* Assets.xcassets */,
 				5B5FBB55267251A000AF86FD /* Preview Content */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B5FBB57267251A000AF86FD /* Preview Assets.xcassets in Resources */,
+				5B0E07712673691600FD48DF /* data.json in Resources */,
 				5B5FBB54267251A000AF86FD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
