@@ -36,7 +36,7 @@ struct MyFurnitureView: View {
                         .listRowSeparator(.hidden)
                         .swipeActions(edge: .leading) {
                             Button(action: {
-                                furniture.isLiked.toggle()
+//                                furniture.isLiked.toggle()
                             }) {
                                 Image(systemName: "trash")
                             }
@@ -50,6 +50,7 @@ struct MyFurnitureView: View {
 
 struct MyFurnitureView_Previews: PreviewProvider {
     static var previews: some View {
-        MyFurnitureView()
+        MyFurnitureView(favouritesStore: FavouritesStore())
+//            .environmentObject(FavouritesStore())
     }
 }
