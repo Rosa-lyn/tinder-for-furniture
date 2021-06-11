@@ -14,22 +14,6 @@ class FavouritesStore: ObservableObject {
     
     var db = Firestore.firestore()
     
-    func addToFavourites(furniture: Furniture) {
-        let docRef = db.collection("MyFurniture").document("MyFurniture")
-        
-        docRef.updateData([
-            "LikedFurniture" : FieldValue.arrayUnion([["name": furniture.name, "url": furniture.url]])
-        ]) { err in
-            if let err = err {
-                print("Error updating document: \(err)")
-            } else {
-                self.favourites.append(furniture)
-                print("Furniture added to likes")
-            }
-        }
-
-    }
-    
     func removeFromFavourites(furniture: Furniture) {
         let docRef = db.collection("MyFurniture").document("MyFurniture")
 
@@ -45,4 +29,14 @@ class FavouritesStore: ObservableObject {
         }
     }
     
+    func addToFavourites(furniture: Furniture) async throws {
+        let docRef = db.collection("MyFurniture").document("MyFurniture")
+
+        try await docRef.updateData([
+            "LikedFurniture" : FieldValue.arrayUnion([["name": furniture.name, "url": furniture.url]])
+        ])
+        
+        self.favourites.append(furniture)
+        print("Furniture added to likes")
+    }
 }
