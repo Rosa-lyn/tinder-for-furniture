@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct TabBarView: View {
+    var favouritesStore = FavouritesStore()
+    
     var body: some View {
         TabView {
             ContentView()
                 .tabItem {
-                    Text("Home")
+                    Image(systemName: "house")
+                }
+            MyFurnitureView(favouritesStore: favouritesStore)
+                .tabItem {
+                    Image(systemName: "hands.sparkles")
                 }
         }
     }
